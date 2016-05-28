@@ -3,7 +3,7 @@
         video = document.getElementById('video'),
       frame = 0;
 
-  control.addEventListener('change', function(){
+  control.addEventListener('input', function(){
     video.currentTime = video.duration / this.value;
     console.log(this.value);
   });
