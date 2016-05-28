@@ -1,10 +1,31 @@
-const view360 = function view360(){
-  const product = document.getElementById('product'),
-        img = document.getElementById('product__img'),
-        video = document.getElementById('product__video');
 
-  product.addEventListener('click', () => {
-      video.style.zIndex = 200;
-      video.play();
-    })
-}();
+  let control = document.getElementById('control'),
+        video = document.getElementById('video'),
+        dur = video.duration,
+       time = video.currentTime,
+      frame = 0;
+
+  control.addEventListener('change', function(){
+    video.currentTime = video.duration / this.value;
+    console.log(this.value);
+  });
+
+  window.addEventListener('keyup', function(e) {
+    // 39 - right
+    // 37 - left
+    if (e.which === 39) {
+      if (frame > 8) {
+        frame = 0;
+      }
+      frame++;
+      video.currentTime = (video.duration / 10) * frame;
+      console.log(frame);
+    } else if (e.which === 37) {
+      if(frame < 0) {
+        frame = 9;
+      }
+      frame --;
+      video.currentTime = (video.duration / 10) * frame;
+      console.log(frame);
+    }
+  });

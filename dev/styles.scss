@@ -18,30 +18,5 @@ body {
   height : auto;
   margin-left : auto;
   margin-right : auto;
-  position : relative;
   border : 2px solid #ccc;
-  &:before {
-    content: "clic en la imagen para vista 360";
-    position : absolute;
-    z-index : 200;
-    top : 100%;
-    left : -2px;
-    padding : 1em 0;
-    background : #000;
-    color: #fff;
-    width : 500px;
-    text-align : center;
-    z-index : 300;
-  }
-
-  &__video {
-    position : absolute;
-    top : 0;
-  }
-
-  &__img {
-    position : relative;
-    z-index : 100;
-  }
-
 }
