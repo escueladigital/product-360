@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box; }
+
+img, video {
+  max-width: 100%; }
+
+h1 {
+  text-align: center; }
+
+body {
+  font-family: sans-serif;
+  font-size: .8em; }
+
+.product {
+  width: 500px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border: 2px solid #ccc; }
+  .product:before {
+    content: "clic en la imagen para vista 360";
+    position: absolute;
+    z-index: 200;
+    top: 100%;
+    left: -2px;
+    padding: 1em 0;
+    background: #000;
+    color: #fff;
+    width: 500px;
+    text-align: center; }
+  .product__video {
+    position: absolute;
+    top: 0; }
+  .product__img {
+    position: relative;
+    z-index: 100; }
