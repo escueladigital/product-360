@@ -2,8 +2,6 @@
 
 var control = document.getElementById('control'),
     video = document.getElementById('video'),
-    dur = video.duration,
-    time = video.currentTime,
     frame = 0;
 
 control.addEventListener('change', function () {
@@ -11,7 +9,7 @@ control.addEventListener('change', function () {
   console.log(this.value);
 });
 
-window.addEventListener('keyup', function (e) {
+addEventListener('keyup', function (e) {
   // 39 - right
   // 37 - left
   if (e.which === 39) {
