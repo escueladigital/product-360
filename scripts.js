@@ -1,4 +1,6 @@
-(function(document) {
+'use strict';
+
+(function (document) {
   'use strict';
 
   var control = $('control'),
@@ -10,7 +12,9 @@
   });
 
   addEventListener('keydown', function (e) {
-    var RIGHT = 39, LEFT = 37, STEP = 0.5;
+    var RIGHT = 39,
+        LEFT = 37,
+        STEP = 0.5;
     if (e.which === RIGHT) {
       control.value = parseFloat(control.value) + STEP;
     } else if (e.which === LEFT) {
@@ -19,12 +23,11 @@
     playVideo();
   });
 
-  function $(elemento) {
-    return document.getElementById(elemento);
-  }
-
-  function playVideo () {
+  function playVideo() {
     video.currentTime = video.duration * (control.value / 10);
   }
 
+  function $(elemento) {
+    return document.getElementById(elemento);
+  }
 })(document);
