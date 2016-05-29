@@ -1,6 +1,6 @@
 (function(document){
-  'use strict';
 
+  const RIGHT = 39, LEFT = 37, STEP = 0.5;
   let control = $('control'),
       video = $('video'),
       frame = 0;
@@ -10,7 +10,6 @@
   });
 
   addEventListener('keydown', function(e) {
-    const RIGHT = 39, LEFT = 37, STEP = 0.5;
     if (e.which === RIGHT) {
       control.value = parseFloat(control.value) + STEP;
     } else if (e.which === LEFT) {
