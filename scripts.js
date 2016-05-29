@@ -1,30 +1,30 @@
-'use strict';
+(function(document) {
+  'use strict';
 
-var control = document.getElementById('control'),
-    video = document.getElementById('video'),
-    frame = 0;
-
-control.addEventListener('input', function () {
-  video.currentTime = video.duration * (this.value / 10);
-  console.log(this.value);
-});
-
-addEventListener('keyup', function (e) {
-  // 39 - right
-  // 37 - left
-  if (e.which === 39) {
-    if (frame > 8) {
+  var control = $('control'),
+      video = $('video'),
       frame = 0;
+
+  control.addEventListener('input', function () {
+    playVideo();
+  });
+
+  addEventListener('keydown', function (e) {
+    var RIGHT = 39, LEFT = 37, STEP = 0.5;
+    if (e.which === RIGHT) {
+      control.value = parseFloat(control.value) + STEP;
+    } else if (e.which === LEFT) {
+      control.value -= STEP;
     }
-    frame++;
-    video.currentTime = video.duration / 10 * frame;
-    console.log(frame);
-  } else if (e.which === 37) {
-    if (frame < 0) {
-      frame = 9;
-    }
-    frame--;
-    video.currentTime = video.duration / 10 * frame;
-    console.log(frame);
+    playVideo();
+  });
+
+  function $(elemento) {
+    return document.getElementById(elemento);
   }
-});
+
+  function playVideo () {
+    video.currentTime = video.duration * (control.value / 10);
+  }
+
+})(document);
