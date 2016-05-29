@@ -5,7 +5,7 @@ var control = document.getElementById('control'),
     frame = 0;
 
 control.addEventListener('input', function () {
-  video.currentTime = video.duration * (this.value / 10);
+  video.currentTime = video.duration / this.value;
   console.log(this.value);
 });
 
